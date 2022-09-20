@@ -40,58 +40,58 @@ class MoneyTransferTest {
         assertEquals(balanceOfFirstCard, finalBalanceOfFirstCard);
         assertEquals(balanceOfSecondCard, finalBalanceOfSecondCard);
     }
-
-    @Test
-    void shouldTransferMoneyFromFirstCardToSecondCard() {
-        val dashboardPage = new DashboardPage();
-        val amount = 2500;
-        val expectedBalanceOfSecondCard = dashboardPage.getCurrentBalanceOfSecondCard();
-        val expectedBalanceOfFirstCard = dashboardPage.getCurrentBalanceOfFirstCard();
-        val transferPage = dashboardPage.transferToSecondCard();
-        val transferInfo = getFirstCardNumber();
-        transferPage.moneyTransfer(transferInfo, amount);
-        val balanceOfSecondCard = getBalanceIfIncrease(expectedBalanceOfSecondCard, amount);
-        val balanceOfFirstCard = getBalanceIfDecrease(expectedBalanceOfFirstCard, amount);
-        assertEquals(balanceOfSecondCard, balanceOfSecondCard);
-        assertEquals(balanceOfFirstCard, balanceOfFirstCard);
-    }
-
-    @Test
-    void shouldBeErrorWhenCardFieldIsEmpty() {
-        val dashboardPage = new DashboardPage();
-        val amount = 1000;
-        val transferPage = dashboardPage.transferToFirstCard();
-        val transferInfo = getEmptyCardNumber();
-        transferPage.moneyTransfer(transferInfo, amount);
-        transferPage.invalidMoneyTransfer();
-    }
-
-    @Test
-    void shouldBeErrorWhenCardNumberIsWrong() {
-        val dashboardPage = new DashboardPage();
-        val amount = 1000;
-        val transferPage = dashboardPage.transferToFirstCard();
-        val transferInfo = getIncorrectCardNumber();
-        transferPage.moneyTransfer(transferInfo, amount);
-        transferPage.invalidMoneyTransfer();
-    }
-
-    @Test
-    void shouldTransferNothingWhenAmountIsNull() {
-        val dashboardPage = new DashboardPage();
-        val amount = 0;
-        val expectedBalanceOfSecondCard = dashboardPage.getCurrentBalanceOfSecondCard();
-        val expectedBalanceOfFirstCard = dashboardPage.getCurrentBalanceOfFirstCard();
-        val transferPage = dashboardPage.transferToSecondCard();
-        val transferInfo = getFirstCardNumber();
-        transferPage.moneyTransfer(transferInfo, amount);
-        val balanceOfSecondCard = getBalanceIfIncrease(expectedBalanceOfSecondCard, amount);
-        val balanceOfFirstCard = getBalanceIfDecrease(expectedBalanceOfFirstCard, amount);
-        val finalBalanceOfSecondCard = dashboardPage.getCurrentBalanceOfSecondCard();
-        val finalBalanceOfFirstCard = dashboardPage.getCurrentBalanceOfFirstCard();
-        assertEquals(balanceOfSecondCard, finalBalanceOfSecondCard);
-        assertEquals(balanceOfFirstCard, finalBalanceOfFirstCard);
-    }
+//
+//    @Test
+//    void shouldTransferMoneyFromFirstCardToSecondCard() {
+//        val dashboardPage = new DashboardPage();
+//        val amount = 2500;
+//        val expectedBalanceOfSecondCard = dashboardPage.getCurrentBalanceOfSecondCard();
+//        val expectedBalanceOfFirstCard = dashboardPage.getCurrentBalanceOfFirstCard();
+//        val transferPage = dashboardPage.transferToSecondCard();
+//        val transferInfo = getFirstCardNumber();
+//        transferPage.moneyTransfer(transferInfo, amount);
+//        val balanceOfSecondCard = getBalanceIfIncrease(expectedBalanceOfSecondCard, amount);
+//        val balanceOfFirstCard = getBalanceIfDecrease(expectedBalanceOfFirstCard, amount);
+//        assertEquals(balanceOfSecondCard, balanceOfSecondCard);
+//        assertEquals(balanceOfFirstCard, balanceOfFirstCard);
+//    }
+//
+//    @Test
+//    void shouldBeErrorWhenCardFieldIsEmpty() {
+//        val dashboardPage = new DashboardPage();
+//        val amount = 1000;
+//        val transferPage = dashboardPage.transferToFirstCard();
+//        val transferInfo = getEmptyCardNumber();
+//        transferPage.moneyTransfer(transferInfo, amount);
+//        transferPage.invalidMoneyTransfer();
+//    }
+//
+//    @Test
+//    void shouldBeErrorWhenCardNumberIsWrong() {
+//        val dashboardPage = new DashboardPage();
+//        val amount = 1000;
+//        val transferPage = dashboardPage.transferToFirstCard();
+//        val transferInfo = getIncorrectCardNumber();
+//        transferPage.moneyTransfer(transferInfo, amount);
+//        transferPage.invalidMoneyTransfer();
+//    }
+//
+//    @Test
+//    void shouldTransferNothingWhenAmountIsNull() {
+//        val dashboardPage = new DashboardPage();
+//        val amount = 0;
+//        val expectedBalanceOfSecondCard = dashboardPage.getCurrentBalanceOfSecondCard();
+//        val expectedBalanceOfFirstCard = dashboardPage.getCurrentBalanceOfFirstCard();
+//        val transferPage = dashboardPage.transferToSecondCard();
+//        val transferInfo = getFirstCardNumber();
+//        transferPage.moneyTransfer(transferInfo, amount);
+//        val balanceOfSecondCard = getBalanceIfIncrease(expectedBalanceOfSecondCard, amount);
+//        val balanceOfFirstCard = getBalanceIfDecrease(expectedBalanceOfFirstCard, amount);
+//        val finalBalanceOfSecondCard = dashboardPage.getCurrentBalanceOfSecondCard();
+//        val finalBalanceOfFirstCard = dashboardPage.getCurrentBalanceOfFirstCard();
+//        assertEquals(balanceOfSecondCard, finalBalanceOfSecondCard);
+//        assertEquals(balanceOfFirstCard, finalBalanceOfFirstCard);
+//    }
 
 //    @Test
 //    void shouldBeErrorWhenNotEnoughMoneyForTransfer() {
